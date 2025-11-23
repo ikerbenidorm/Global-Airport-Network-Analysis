@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airport Network</title>
-    <meta name="description" content="Interactive visualization and analysis of the Global Airport Network using complex systems theory.">
+    <meta name="description"
+        content="Interactive visualization and analysis of the Global Airport Network using complex systems theory.">
     <meta name="author" content="Iker Lomas Javaloyes">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -73,28 +78,27 @@
             overflow: hidden;
             background-color: #020617;
         }
+
         .river-gradient {
             position: absolute;
             top: -100%;
             left: -100%;
             width: 300%;
             height: 300%;
-            opacity: 0.3; 
+            opacity: 0.3;
             filter: blur(100px);
-            background: conic-gradient(
-                from 180deg at 50% 50%,
-                #020617 0deg,      
-                #6366f1 45deg,     
-                #020617 130deg,    
-                #38bdf8 200deg,    
-                #34d399 240deg,    
-                #020617 360deg     
-            );
+            background: conic-gradient(from 180deg at 50% 50%,
+                    #020617 0deg,
+                    #6366f1 45deg,
+                    #020617 130deg,
+                    #38bdf8 200deg,
+                    #34d399 240deg,
+                    #020617 360deg);
             animation: river 30s linear infinite;
         }
 
         .glass-panel {
-            background: rgba(15, 23, 42, 0.5); 
+            background: rgba(15, 23, 42, 0.5);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -112,7 +116,7 @@
         .tech-tag {
             @apply px-2 py-1 bg-slate-800/80 border border-slate-700 text-[10px] font-mono text-slate-300 rounded uppercase tracking-wider;
         }
-        
+
         /* Animación del icono al hacer hover sobre el enlace */
         .tech-icon-wrapper:hover i {
             transform: scale(1.2);
@@ -120,6 +124,7 @@
         }
     </style>
 </head>
+
 <body class="antialiased min-h-screen flex flex-col selection:bg-accent selection:text-slate-900 relative">
 
     <div class="animated-bg-container">
@@ -134,10 +139,13 @@
             </div>
             <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
                 <a href="#projects" class="hover:text-white transition-colors">Visualizations</a>
+                <a href="#data" class="hover:text-white transition-colors">Data</a>
                 <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank"
+                    class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-            <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank" class="md:hidden text-slate-400 hover:text-white">
+            <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank"
+                class="md:hidden text-slate-400 hover:text-white">
                 <i class="fa-brands fa-github text-xl"></i>
             </a>
         </div>
@@ -145,28 +153,35 @@
 
     <header class="relative pt-28 pb-12 px-4 md:px-6 border-b border-white/5">
         <div class="max-w-5xl mx-auto text-center animate-fade-in-up">
-            
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/50 border border-slate-700 text-accent text-xs font-bold tracking-widest uppercase mb-8 shadow-lg shadow-sky-500/10 hover:border-accent/50 transition-colors cursor-default">
+
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/50 border border-slate-700 text-accent text-xs font-bold tracking-widest uppercase mb-8 shadow-lg shadow-sky-500/10 hover:border-accent/50 transition-colors cursor-default">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
                 </span>
                 Complex Systems
             </div>
-            
+
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 text-white leading-[1.1]">
                 Global Airport <br />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-secondary">Network Analysis</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-secondary">Network
+                    Analysis</span>
             </h1>
-            
+
             <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-light mb-10">
-                A topological study of the worldwide air transportation infrastructure using graph theory, community detection algorithms, and interactive scientific visualization.
+                A topological study of the worldwide air transportation infrastructure using graph theory, community
+                detection algorithms, and interactive scientific visualization.
             </p>
 
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#projects" class="group relative px-8 py-4 bg-accent text-slate-900 font-bold rounded-lg overflow-hidden transition-all hover:bg-accentHover hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]">
+                <a href="#projects"
+                    class="group relative px-8 py-4 bg-accent text-slate-900 font-bold rounded-lg overflow-hidden transition-all hover:bg-accentHover hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]">
                     <span class="relative z-10 flex items-center gap-2">
-                        Explore Networks <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                        Explore Networks <i
+                            class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
                     </span>
                 </a>
             </div>
@@ -176,36 +191,49 @@
     <div class="border-b border-white/5 bg-white/[0.02] backdrop-blur-sm">
         <div class="max-w-8xl mx-auto px-6 py-8">
             <div class="flex flex-wrap justify-center lg:justify-around items-center gap-x-12 gap-y-8">
-                
-                <a href="https://www.python.org/" target="_blank" class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
-                    <i class="fa-brands fa-python text-2xl text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]"></i>
+
+                <a href="https://www.python.org/" target="_blank"
+                    class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
+                    <i
+                        class="fa-brands fa-python text-2xl text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]"></i>
                     <div class="text-left">
-                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">Backend</p>
+                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">
+                            Backend</p>
                         <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">Python</p>
                     </div>
                 </a>
 
-                <a href="https://networkx.org/" target="_blank" class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
-                    <i class="fa-solid fa-diagram-project text-2xl text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]"></i>
+                <a href="https://networkx.org/" target="_blank"
+                    class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
+                    <i
+                        class="fa-solid fa-diagram-project text-2xl text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]"></i>
                     <div class="text-left">
-                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">Library</p>
-                        <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">NetworkX</p>
+                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">
+                            Library</p>
+                        <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">NetworkX
+                        </p>
                     </div>
                 </a>
 
-                <a href="https://plotly.com/python/" target="_blank" class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
+                <a href="https://plotly.com/python/" target="_blank"
+                    class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
                     <i class="fa-solid fa-cube text-2xl text-pink-500 drop-shadow-[0_0_8px_rgba(236,72,153,0.3)]"></i>
                     <div class="text-left">
-                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">Visualization</p>
+                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">
+                            Visualization</p>
                         <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">Plotly</p>
                     </div>
                 </a>
 
-                <a href="https://openflights.org/" target="_blank" class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
-                    <i class="fa-solid fa-database text-2xl text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]"></i>
+                <a href="https://openflights.org/" target="_blank"
+                    class="flex items-center gap-3 tech-icon-wrapper group min-w-[140px] hover:bg-white/5 rounded-lg p-2 transition-colors">
+                    <i
+                        class="fa-solid fa-database text-2xl text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]"></i>
                     <div class="text-left">
-                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">Source</p>
-                        <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">OpenFlights</p>
+                        <p class="text-[10px] text-slate-500 font-mono uppercase tracking-widest leading-none mb-1">
+                            Source</p>
+                        <p class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">OpenFlights
+                        </p>
                     </div>
                 </a>
 
@@ -216,37 +244,46 @@
     <main class="flex-grow container max-w-8xl mx-auto px-4 md:px-6 py-16 md:py-20">
 
         <div id="projects" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
-            
-            <article class="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full animate-fade-in-up" style="animation-delay: 0.1s;">
-                <a href="airport_network_interactive.html" class="block relative h-64 md:h-96 lg:h-[450px] overflow-hidden cursor-pointer">
+
+            <article class="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full animate-fade-in-up"
+                style="animation-delay: 0.1s;">
+                <a href="airport_network_interactive.html"
+                    class="block relative h-64 md:h-96 lg:h-[450px] overflow-hidden cursor-pointer">
                     <div class="absolute top-6 left-6 z-20 flex gap-2">
-                        <span class="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold rounded uppercase tracking-wide">
+                        <span
+                            class="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold rounded uppercase tracking-wide">
                             Global Topology
                         </span>
                     </div>
-                    <div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
-                        <span class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2">
+                    <div
+                        class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+                        <span
+                            class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2">
                             <i class="fa-solid fa-play text-accent"></i> Launch 2D Map
                         </span>
                     </div>
-                    <img src="airport_network_interactive.png" alt="Interactive Network Map" 
-                         class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    <img src="airport_network_interactive.png" alt="Interactive Network Map"
+                        class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80">
+                    </div>
                 </a>
-                
+
                 <div class="p-6 md:p-8 lg:p-10 flex flex-col flex-grow">
                     <div class="flex items-start justify-between mb-4">
                         <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-accent transition-colors">
                             <a href="airport_network_interactive.html">Network Visualization</a>
                         </h2>
-                        <i class="fa-solid fa-share-nodes text-slate-600 text-xl group-hover:text-accent transition-colors"></i>
+                        <i
+                            class="fa-solid fa-share-nodes text-slate-600 text-xl group-hover:text-accent transition-colors"></i>
                     </div>
-                    
+
                     <p class="text-slate-400 mb-6 leading-relaxed flex-grow text-sm md:text-lg">
-                        Complete 2D visualization of the network. Each node represents an airport and each edge represents an active commercial route.
+                        Complete 2D visualization of the network. Each node represents an airport and each edge
+                        represents an active commercial route.
                     </p>
-                    
+
                     <div class="flex items-center gap-3 mt-auto pt-6 border-t border-white/5 flex-wrap">
                         <span class="tech-tag">Plotly</span>
                         <span class="tech-tag">Graph Theory</span>
@@ -255,36 +292,46 @@
                 </div>
             </article>
 
-            <article class="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full animate-fade-in-up" style="animation-delay: 0.2s;">
-                <a href="airport_communities_interactive.html" class="block relative h-64 md:h-96 lg:h-[450px] overflow-hidden cursor-pointer">
+            <article class="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                <a href="airport_communities_interactive.html"
+                    class="block relative h-64 md:h-96 lg:h-[450px] overflow-hidden cursor-pointer">
                     <div class="absolute top-6 left-6 z-20 flex gap-2">
-                        <span class="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold rounded uppercase tracking-wide">
+                        <span
+                            class="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold rounded uppercase tracking-wide">
                             Community Detection
                         </span>
                     </div>
-                     <div class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
-                        <span class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2">
+                    <div
+                        class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+                        <span
+                            class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2">
                             <i class="fa-solid fa-magnifying-glass-chart text-secondary"></i> View Analysis
                         </span>
                     </div>
-                    <img src="airport_communities_interactive.png" alt="Community Clusters Map" 
-                         class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    <img src="airport_communities_interactive.png" alt="Community Clusters Map"
+                        class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                        loading="lazy">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80">
+                    </div>
                 </a>
-                
+
                 <div class="p-6 md:p-8 lg:p-10 flex flex-col flex-grow">
                     <div class="flex items-start justify-between mb-4">
-                        <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">
+                        <h2
+                            class="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">
                             <a href="airport_communities_interactive.html">Community Detection</a>
                         </h2>
-                        <i class="fa-solid fa-users-rays text-slate-600 text-xl group-hover:text-secondary transition-colors"></i>
+                        <i
+                            class="fa-solid fa-users-rays text-slate-600 text-xl group-hover:text-secondary transition-colors"></i>
                     </div>
-                    
+
                     <p class="text-slate-400 mb-6 leading-relaxed flex-grow text-sm md:text-lg">
-                        Application of the Louvain modularity algorithm to detect communities. Colors cluster airports that are highly connected to each other.
+                        Application of the Louvain modularity algorithm to detect communities. Colors cluster airports
+                        that are highly connected to each other.
                     </p>
-                    
+
                     <div class="flex items-center gap-3 mt-auto pt-6 border-t border-white/5 flex-wrap">
                         <span class="tech-tag">Louvain Algorithm</span>
                         <span class="tech-tag">Modularity</span>
@@ -294,97 +341,181 @@
             </article>
         </div>
 
-        <section id="about" class="max-w-6xl mx-auto mb-16 animate-fade-in-up" style="animation-delay: 0.3s;">
-            <div class="relative group">
-                 <div class="hidden md:block absolute -inset-1 bg-gradient-to-r from-accent to-secondary rounded-2xl opacity-10 blur-lg group-hover:opacity-20 transition duration-1000"></div>
-                
-                <div class="relative glass-panel rounded-xl p-8 md:p-12 border-l-4 border-accent/70">
-                    <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-                        <i class="fa-solid fa-circle-info text-accent"></i> About the Project
-                    </h2>
-                    
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        
-                        <div class="space-y-6 text-slate-300 leading-relaxed text-base md:text-lg">
-                            <p>
-                                This research project investigates the global airport network as a <strong>complex system</strong>, applying graph theory and network science methodologies to understand the structure and organization of worldwide air transportation.
-                            </p>
-                            <p>
-                                The network is modeled as an <strong>undirected graph</strong> where nodes represent airports and edges represent the existence of at least one air route between two airports, regardless of direction. This approach allows us to focus on the fundamental connectivity structure of the aviation network.
-                            </p>
-                            <p class="text-sm md:text-base text-slate-400 italic">
-                                The visualizations provided on this website allow researchers and aviation enthusiasts to interact with the data, explore connectivity patterns, and gain insights into the complex structure of global air transportation. The data has been extracted from <a href="https://openflights.org/" target="_blank" class="text-accent hover:underline decoration-dotted underline-offset-2">OpenFlights</a>.
-                            </p>
+        <main class="flex-grow container max-w-8xl mx-auto px-4 md:px-6 py-16 md:py-20">
+            <div id="data" class="flex flex-col gap-8 lg:gap-16 mb-24 max-w-4xl mx-auto">
+
+                <article class="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full animate-fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    <a href="airport_data.html"
+                        class="block relative h-64 md:h-96 lg:h-[450px] overflow-hidden cursor-pointer">
+                        <div class="absolute top-6 left-6 z-20 flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-bold rounded uppercase tracking-wide">
+                                Network Statistics & Data
+                            </span>
                         </div>
-                        
-                        <div class="bg-slate-900/50 p-6 rounded-lg border border-white/5 h-fit shadow-xl backdrop-blur-md">
-                            <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide opacity-90 border-b border-white/10 pb-2">
-                                Key Areas of Analysis
-                            </h3>
-                            <ul class="space-y-3 text-sm md:text-base">
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    <span class="text-slate-300">Analysis of the largest connected component of the global network</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    <span class="text-slate-300">Community detection to identify regional clusters</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    <span class="text-slate-300">Topological metrics including degree distribution and centrality measures</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    <span class="text-slate-300">Geographical visualization of network properties</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
-                                    <span class="text-slate-300">Interactive tools for exploring network structure</span>
-                                </li>
-                            </ul>
+                        <div
+                            class="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 backdrop-blur-[2px]">
+                            <span
+                                class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass-chart text-emerald-400"></i> View Network
+                                Statistics
+                            </span>
+                        </div>
+                        <img src="Data.png" alt="Network Statistics & Data"
+                            class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80">
+                        </div>
+                    </a>
+
+                    <div class="p-6 md:p-8 lg:p-10 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-4">
+                            <h2
+                                class="text-2xl md:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                <a href="airport_data.html">Network Statistics & Data</a>
+                            </h2>
+                            <i
+                                class="fa-solid fa-database text-slate-600 text-xl group-hover:text-emerald-400 transition-colors"></i>
                         </div>
 
+                        <p class="text-slate-400 mb-6 leading-relaxed flex-grow text-sm md:text-lg">
+                            Explore the full dataset of the Global Airport Network. Use the search box to find specific
+                            airports, or sort the columns to discover the most connected hubs (Degree), the best bridges
+                            (Betweenness), or community clusters.
+                        </p>
+
+                        <div class="flex items-center gap-3 mt-auto pt-6 border-t border-white/5 flex-wrap">
+                            <span class="tech-tag">Modularity</span>
+                            <span class="tech-tag">Degree</span>
+                            <span class="tech-tag">Betweenness</span>
+                            <span class="tech-tag">Closeness</span>
+                            <span class="tech-tag">PageRank</span>
+                            <span class="tech-tag">Eigenvector</span>
+
+                            <span class="tech-tag text-emerald-400 border-emerald-400/20">Community</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <section id="about" class="max-w-6xl mx-auto mb-16 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="relative group">
+                    <div
+                        class="hidden md:block absolute -inset-1 bg-gradient-to-r from-accent to-secondary rounded-2xl opacity-10 blur-lg group-hover:opacity-20 transition duration-1000">
+                    </div>
+
+                    <div class="relative glass-panel rounded-xl p-8 md:p-12 border-l-4 border-accent/70">
+                        <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                            <i class="fa-solid fa-circle-info text-accent"></i> About the Project
+                        </h2>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                            <div class="space-y-6 text-slate-300 leading-relaxed text-base md:text-lg">
+                                <p>
+                                    This research project investigates the global airport network as a <strong>complex
+                                        system</strong>, applying graph theory and network science methodologies to
+                                    understand the structure and organization of worldwide air transportation.
+                                </p>
+                                <p>
+                                    The network is modeled as an <strong>undirected graph</strong> where nodes represent
+                                    airports and edges represent the existence of at least one air route between two
+                                    airports, regardless of direction. This approach allows us to focus on the
+                                    fundamental connectivity structure of the aviation network.
+                                </p>
+                                <p class="text-sm md:text-base text-slate-400 italic">
+                                    The visualizations provided on this website allow researchers and aviation
+                                    enthusiasts to interact with the data, explore connectivity patterns, and gain
+                                    insights into the complex structure of global air transportation. The data has been
+                                    extracted from <a href="https://openflights.org/" target="_blank"
+                                        class="text-accent hover:underline decoration-dotted underline-offset-2">OpenFlights</a>.
+                                </p>
+                            </div>
+
+                            <div
+                                class="bg-slate-900/50 p-6 rounded-lg border border-white/5 h-fit shadow-xl backdrop-blur-md">
+                                <h3
+                                    class="text-white font-semibold mb-4 text-sm uppercase tracking-wide opacity-90 border-b border-white/10 pb-2">
+                                    Key Areas of Analysis
+                                </h3>
+                                <ul class="space-y-3 text-sm md:text-base">
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                        <span class="text-slate-300">Analysis of the largest connected component of the
+                                            global network</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                        <span class="text-slate-300">Community detection to identify regional
+                                            clusters</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                        <span class="text-slate-300">Topological metrics including degree distribution
+                                            and centrality measures</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                        <span class="text-slate-300">Geographical visualization of network
+                                            properties</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                        <span class="text-slate-300">Interactive tools for exploring network
+                                            structure</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="border-t border-white/5 bg-[#020617]/80 backdrop-blur-md mt-auto pt-12 pb-8">
+            <div class="container max-w-8xl mx-auto px-4 md:px-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+                    <div class="text-left">
+                        <h4 class="text-xl md:text-2xl font-bold text-white tracking-tight">Iker Lomas Javaloyes</h4>
+                        <p class="text-slate-500 mt-2 text-sm">Institute for Cross-Disciplinary Physics and Complex
+                            Systems</p>
+                        <a href="https://ifisc.uib-csic.es/" target="_blank"
+                            class="text-accent font-medium text-sm mt-1 hover:text-white transition-colors inline-block">
+                            IFISC (UIB-CSIC) <i class="fa-solid fa-external-link-alt text-xs ml-1"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex gap-4 w-full md:w-auto">
+                        <a href="mailto:ikerlomas@ifisc.uib-csic.es"
+                            class="flex-1 md:flex-none justify-center group flex items-center gap-3 px-5 py-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-accent hover:bg-slate-800 transition-all duration-300">
+                            <i class="fa-regular fa-envelope text-slate-400 group-hover:text-accent"></i>
+                            <span class="text-slate-400 group-hover:text-white text-sm font-medium">Contact</span>
+                        </a>
+                        <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank"
+                            class="flex-1 md:flex-none justify-center group flex items-center gap-3 px-5 py-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-white hover:bg-slate-800 transition-all duration-300">
+                            <i class="fa-brands fa-github text-slate-400 group-hover:text-white"></i>
+                            <span class="text-slate-400 group-hover:text-white text-sm font-medium">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 text-xs uppercase tracking-wider font-mono gap-4">
+                    <p>&copy; 2025 Global Airport Network Analysis</p>
+                    <div class="flex gap-6">
+                        <span>Palma de Mallorca, Spain</span>
+                        <span class="hidden md:inline">|</span>
+                        <a href="https://openflights.org/" target="_blank"
+                            class="hover:text-slate-400 transition-colors">Data: OpenFlights</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-white/5 bg-[#020617]/80 backdrop-blur-md mt-auto pt-12 pb-8">
-        <div class="container max-w-8xl mx-auto px-4 md:px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-                <div class="text-left">
-                    <h4 class="text-xl md:text-2xl font-bold text-white tracking-tight">Iker Lomas Javaloyes</h4>
-                    <p class="text-slate-500 mt-2 text-sm">Institute for Cross-Disciplinary Physics and Complex Systems</p>
-                    <a href="https://ifisc.uib-csic.es/" target="_blank" class="text-accent font-medium text-sm mt-1 hover:text-white transition-colors inline-block">
-                        IFISC (UIB-CSIC) <i class="fa-solid fa-external-link-alt text-xs ml-1"></i>
-                    </a>
-                </div>
-                
-                <div class="flex gap-4 w-full md:w-auto">
-                    <a href="mailto:ikerlomas@ifisc.uib-csic.es" class="flex-1 md:flex-none justify-center group flex items-center gap-3 px-5 py-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-accent hover:bg-slate-800 transition-all duration-300">
-                        <i class="fa-regular fa-envelope text-slate-400 group-hover:text-accent"></i>
-                        <span class="text-slate-400 group-hover:text-white text-sm font-medium">Contact</span>
-                    </a>
-                    <a href="https://github.com/ikerbenidorm/Global-Airport-Network-Analysis" target="_blank" class="flex-1 md:flex-none justify-center group flex items-center gap-3 px-5 py-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-white hover:bg-slate-800 transition-all duration-300">
-                        <i class="fa-brands fa-github text-slate-400 group-hover:text-white"></i>
-                        <span class="text-slate-400 group-hover:text-white text-sm font-medium">GitHub</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 text-xs uppercase tracking-wider font-mono gap-4">
-                <p>&copy; 2025 Global Airport Network Analysis</p>
-                <div class="flex gap-6">
-                    <span>Palma de Mallorca, Spain</span>
-                    <span class="hidden md:inline">|</span>
-                    <a href="https://openflights.org/" target="_blank" class="hover:text-slate-400 transition-colors">Data: OpenFlights</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
 </body>
+
 </html>
