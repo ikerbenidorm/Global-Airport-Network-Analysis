@@ -59,7 +59,6 @@ If you use this repository, please cite as follows:
 author = {Iker Lomas Javaloyes},
 title = {Global Airport Network Analysis},
 year = {2025},
-howpublished = {\url{https://github.com/ikerbenidorm/Global-Airport-Network-Analysis}},
-note = {Accessed: 2025-11-26}
+howpublished = {\url{https://github.com/ikerbenidorm/Global-Airport-Network-Analysis}}
 }
 ```
